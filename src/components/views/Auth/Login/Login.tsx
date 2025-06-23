@@ -29,7 +29,7 @@ const Login = () => {
             <Card>
                 <CardBody className="p-8">
                     <h2 className="text-xl font-bold text-danger-500">Login</h2>
-                    <p className="text-sm mb-4">Don't have an account?&nbsp;
+                    <p className="text-sm mb-4">Don't have an account? &nbsp;
                         <Link href="/auth/register" className="font-semibold text-danger-400">
                         Register here
                         </Link>
