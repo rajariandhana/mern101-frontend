@@ -16,7 +16,7 @@ const useLogin = () => {
     const router = useRouter();
     const [isVisible, setIsVisible] = useState(false);
 
-    const callBackURL: string = (router.query.callBackURL as string) || "/";
+    const callbackUrl: string = (router.query.callbackUrl as string) || "/";
 
     const toggleVisibility = () => {
         setIsVisible(!isVisible);
@@ -30,7 +30,7 @@ const useLogin = () => {
         const result = await signIn("credentials",{
             ...payload,
             redirect: false,
-            callbackUrl: callBackURL,
+            callbackUrl: callbackUrl,
         });
         if(result?.error && result?.status===401){
             throw new Error("Invalid credentials");
@@ -46,7 +46,7 @@ const useLogin = () => {
             });
         },
         onSuccess: () =>{
-            router.push(callBackURL);
+            router.push(callbackUrl);
             reset();
         }
     });
